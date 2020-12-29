@@ -39,6 +39,8 @@ public class BeerOrderController {
         this.beerOrderService = beerOrderService;
     }
 
+    // display a customer's orders, given its customerId
+    // http://localhost:8081/api/v1/customers/7590e9a6-c32a-444c-b257-bdf238c36116/orders
     @GetMapping("orders")
     public BeerOrderPagedList listOrders(@PathVariable("customerId") UUID customerId,
                                          @RequestParam(value = "pageNumber", required = false) Integer pageNumber,

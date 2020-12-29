@@ -20,10 +20,15 @@ package guru.sfg.beer.order.service.web.mappers;
 import guru.sfg.beer.order.service.domain.BeerOrder;
 import guru.sfg.beer.order.service.web.model.BeerOrderDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(uses = {DateMapper.class, BeerOrderLineMapper.class})
 public interface BeerOrderMapper {
 
+    // on the BeerOrder object we have a customer entity
+    // for the customerId property on the BeerOrderDto object, the source of that customerId is going to be from
+    // the customer property id
+    @Mapping(target = "customerId", source = "customer.id")
     BeerOrderDto beerOrderToDto(BeerOrder beerOrder);
 
     BeerOrder dtoToBeerOrder(BeerOrderDto dto);
