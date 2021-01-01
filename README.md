@@ -5,16 +5,16 @@
 
 Beer object example:
 
-UUID **id** = '026cc3c8-3a0c-4083-a05b-e908048c1b08' 
-String **beer_name** = 'Pinball Porter' 
-String **beer_style** = 'PORTER' 
-Timestamp **created_date** = CURRENT_TIMESTAMP 
-Timestamp **last_modified_date** = CURRENT_TIMESTAMP 
-Integer **min_on_hand** = 12 
-Integer **quantity_to_brew** = 200 
-BigDecimal **price** = 12.95 
-String **upc** = '0083783375213' 
-Long **version** = 1
+- UUID **id** = '026cc3c8-3a0c-4083-a05b-e908048c1b08' 
+- String **beer_name** = 'Pinball Porter' 
+- String **beer_style** = 'PORTER' 
+- Timestamp **created_date** = CURRENT_TIMESTAMP 
+- Timestamp **last_modified_date** = CURRENT_TIMESTAMP 
+- Integer **min_on_hand** = 12 
+- Integer **quantity_to_brew** = 200 
+- BigDecimal **price** = 12.95 
+- String **upc** = '0083783375213' 
+- Long **version** = 1
 
 
 [![CircleCI](https://circleci.com/gh/kawgh1/mssc-beer-order-service.svg?style=svg)](https://circleci.com/gh/kawgh1/mssc-beer-order-service)
