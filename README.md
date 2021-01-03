@@ -27,6 +27,8 @@ Steps for Deconstruction into  Microservices
 3. JMS Messaging
 4. JMS with Microservices
 5. Spring State Machine
+6. Using Sagas with Spring
+7. Integration Testing Sagas
 
 Deconstruction Process - 12/28/2020
 
