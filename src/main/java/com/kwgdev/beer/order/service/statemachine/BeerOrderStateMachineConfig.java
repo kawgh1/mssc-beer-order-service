@@ -1,6 +1,6 @@
 package com.kwgdev.beer.order.service.statemachine;
 
-import com.kwgdev.beer.order.service.domain.BeerOrder;
+
 import com.kwgdev.beer.order.service.domain.BeerOrderStatusEnum;
 import com.kwgdev.beer.order.service.domain.BeerOrderEventEnum;
 import org.springframework.context.annotation.Configuration;

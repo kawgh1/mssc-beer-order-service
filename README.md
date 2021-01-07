@@ -21,14 +21,23 @@ Beer object example:
 
 # MSSC Beer Order Service
 
-Steps for Deconstruction into  Microservices
-1. Dependency Management
-2. (Local) MySQL Configuration
-3. JMS Messaging
-4. JMS with Microservices
-5. Spring State Machine
-6. Using Sagas with Spring
-7. Integration Testing Sagas
+## Steps for Deconstruction into  Microservices
+### 1. Dependency Management
+### 2. (Local) MySQL Configuration
+### 3. JMS Messaging
+### 4. JMS with Microservices
+### 5. Spring State Machine
+### 6. Using Sagas with Spring
+### 7. Integration Testing Sagas
+
+- # Refactoring Model to Common Package
+    - **Model** - Objects exposed to JSON
+    - **Problem** - In Spring, serialization / de-serialization expects same package / object name
+        - Could address w/ additional Jackson configuration
+    - **Solution** - Move model objects to package - 'com.kwgdev.brewery.model'
+        - All services are related under the 'Brewery' set of services
+    - **Problem** - Lombok Builders with parent classes problematic
+        - **Solution** - flatten classes
 
 - Deconstruction Process - 12/28/2020
 
