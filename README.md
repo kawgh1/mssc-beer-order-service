@@ -30,7 +30,7 @@ Steps for Deconstruction into  Microservices
 6. Using Sagas with Spring
 7. Integration Testing Sagas
 
-Deconstruction Process - 12/28/2020
+- Deconstruction Process - 12/28/2020
 
 	- Where We Are At
 		- Beer Monolith has been broken down into 3 independent microservices
@@ -48,8 +48,7 @@ Deconstruction Process - 12/28/2020
 			- Events and consumers of events is broken
 		- The 3 services are using Maven, but there is a high degree of duplication in Maven POM files
 
-
-	- Next Steps
+    - Next Steps
 		- Establish a Maven BOM (Bill of Materials) to reduce duplication in Maven POMs
 			- Also - good technique for standardization and compliance across the enterprise
 			- By making all subsystems and microservice POMs dependent on a BOM, don't have to go in and update each one every time some version is updated or patched
