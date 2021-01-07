@@ -31,7 +31,8 @@ Beer object example:
 ### 7. Integration Testing Sagas
 
 - # Refactoring Model to Common Package
-    - **Model** - Objects exposed to JSON
+    - **Model** - Objects exposed to JSON 
+        - ##### things that we will send out to the Client as JSON, changing them, and bring them back in to the back-end as JSON, convert to Java objects and perform business logic and database operations from there
     - **Problem** - In Spring, serialization / de-serialization expects same package / object name
         - Could address w/ additional Jackson configuration
     - **Solution** - Move model objects to package - 'com.kwgdev.brewery.model'
