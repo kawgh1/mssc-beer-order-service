@@ -6,7 +6,7 @@ package com.kwgdev.beer.order.service.services.beer;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.kwgdev.beer.order.service.web.model.BeerDto;
+import com.kwgdev.brewery.model.BeerDto;
 
 public interface BeerService {
 

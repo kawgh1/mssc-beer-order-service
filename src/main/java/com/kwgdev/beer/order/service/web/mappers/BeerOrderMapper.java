@@ -18,7 +18,7 @@
 package com.kwgdev.beer.order.service.web.mappers;
 
 import com.kwgdev.beer.order.service.domain.BeerOrder;
-import com.kwgdev.beer.order.service.web.model.BeerOrderDto;
+import com.kwgdev.brewery.model.BeerOrderDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

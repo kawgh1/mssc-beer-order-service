@@ -18,8 +18,8 @@
 package com.kwgdev.beer.order.service.web.controllers;
 
 import com.kwgdev.beer.order.service.services.BeerOrderService;
-import com.kwgdev.beer.order.service.web.model.BeerOrderDto;
-import com.kwgdev.beer.order.service.web.model.BeerOrderPagedList;
+import com.kwgdev.brewery.model.BeerOrderDto;
+import com.kwgdev.brewery.model.BeerOrderPagedList;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

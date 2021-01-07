@@ -5,9 +5,9 @@ import com.kwgdev.beer.order.service.domain.BeerOrder.BeerOrderBuilder;
 import com.kwgdev.beer.order.service.domain.BeerOrderLine;
 import com.kwgdev.beer.order.service.domain.BeerOrderStatusEnum;
 import com.kwgdev.beer.order.service.domain.Customer;
-import com.kwgdev.beer.order.service.web.model.BeerOrderDto;
-import com.kwgdev.beer.order.service.web.model.BeerOrderDto.BeerOrderDtoBuilder;
-import com.kwgdev.beer.order.service.web.model.BeerOrderLineDto;
+import com.kwgdev.brewery.model.BeerOrderDto;
+import com.kwgdev.brewery.model.BeerOrderDto.BeerOrderDtoBuilder;
+import com.kwgdev.brewery.model.BeerOrderLineDto;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-01-07T11:40:32-0600",
+    date = "2021-01-07T14:10:59-0600",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 13.0.2 (Oracle Corporation)"
 )
 @Component
@@ -45,12 +45,12 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         }
         beerOrderDto.createdDate( dateMapper.asOffsetDateTime( beerOrder.getCreatedDate() ) );
         beerOrderDto.lastModifiedDate( dateMapper.asOffsetDateTime( beerOrder.getLastModifiedDate() ) );
+        beerOrderDto.customerRef( beerOrder.getCustomerRef() );
         beerOrderDto.beerOrderLines( beerOrderLineSetToBeerOrderLineDtoList( beerOrder.getBeerOrderLines() ) );
         if ( beerOrder.getOrderStatus() != null ) {
             beerOrderDto.orderStatus( beerOrder.getOrderStatus().name() );
         }
         beerOrderDto.orderStatusCallbackUrl( beerOrder.getOrderStatusCallbackUrl() );
-        beerOrderDto.customerRef( beerOrder.getCustomerRef() );
 
         return beerOrderDto.build();
     }
