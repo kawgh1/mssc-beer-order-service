@@ -43,6 +43,54 @@ Beer object example:
         - All services are related under the 'Brewery' set of services
     - **Problem** - Lombok Builders with parent classes problematic
         - **Solution** - flatten classes
+        
+        
+- # Notes on Agile Software Development Process
+    - Agile Software Development is an iterative development process
+        - Software is developed in small increments
+        - Widely adopted by companies
+            - Often poorly implemented!
+        - Agile is a VERY large topic!
+    - Companies that use Agile often use SCRUM
+    - SCRUM is a process framework
+        - Tasks are planned in a backlog
+        - Tasks are planned into a "Sprint"
+    - A **Sprint** is typically a 2-4 week period of work for 5 to 9 people
+        - Length and team size are highly debated
+    - At the ***end of a Sprint***, a **Retrospective** is held
+        - Purpose is to reflect and improve for next iteration
+        
+    - ## A Typical Sprint Retrospective Model
+        - ## What worked well?
+            - Planning Issues in GitHub
+                - Allows better visibility of what source code was changed
+            - Having CI Builds to catch problems
+                - 3 failures detected
+        - ## What could be improved?
+            - Ideally should not have had 3 CI build failures
+                - Testing is VERY light
+            - Need better examples of Compensating Transactions
+        - ## What will we commit to doing in the next Sprint?
+            - Improve Test Coverage
+                - Testing has not been a focus
+                - Saga's clearly have a lot of moving parts!
+                    - Verify the Saga with Saga Integration Tests
+                - Improve examples of Compensating Transactions
+                
+        - ## *Scrum Team members make actionable commitments*
+            - ### Integration Tests
+                - Unit Tests typically target a single class
+                - Integration tests will test the interactions between components
+                - In our microservice, we want to test:
+                    - Receiving a new order
+                    - Sending / Receiving JMS messages
+                    - Persistence
+                    - State Changes in the State Machine
+                    
+            - ### Compensating Transactions
+                - Problem - current 'non-happy' path events end in a terminal state
+                - need example of compensating transactions
+                    - Non-happy path - call service to 'undo' action
 
 - Deconstruction Process - 12/28/2020
 
