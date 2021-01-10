@@ -19,6 +19,12 @@ import java.util.UUID;
 /**
  * created by kw on 1/10/2021 @ 10:30 AM
  */
+
+// because we have @Component annotation, Spring will create a bean with bean name allocateOrderAction with a lower case "a"
+// so this matches to statemachine/BeerOrderStateMachineConfig.allocateOrderAction
+
+    // so by having this same as the class name of the bean or make them match up, we don't have to do any type qualifier
+    // this is a hidden Spring trick
 @Slf4j
 @Component
 @RequiredArgsConstructor

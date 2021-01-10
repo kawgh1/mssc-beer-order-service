@@ -5,6 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.jms.annotation.JmsListener;
 
+import com.kwgdev.brewery.model.events.ValidateOrderResult;
+import com.kwgdev.beer.order.service.services.BeerOrderManager;
+import com.kwgdev.beer.order.service.config.JmsConfig;
+
+
+import java.util.UUID;
 /**
  * created by kw on 1/10/2021 @ 11:25 AM
  */

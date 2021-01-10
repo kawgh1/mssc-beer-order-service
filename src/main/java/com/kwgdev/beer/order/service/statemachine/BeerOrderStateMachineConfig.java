@@ -22,6 +22,13 @@ import java.util.EnumSet;
 public class BeerOrderStateMachineConfig extends StateMachineConfigurerAdapter<BeerOrderStatusEnum, BeerOrderEventEnum> {
 
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  validateOrderAction;
+    // because we have @Component annotation in statemachine/actions/ValidateOrderAction,
+    // Spring will create a bean with bean name allocateOrderAction with a lower case "a"
+    // so this matches to statemachine/BeerOrderStateMachineConfig.allocateOrderAction
+
+    // so by having this same as the class name of the bean or make them match up, we don't have to do any type qualifier
+    // if we declare it as below
+    // this is a hidden Spring trick
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  allocateOrderAction;
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  validationFailureAction;
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  allocationFailureAction;
