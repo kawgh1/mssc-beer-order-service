@@ -29,6 +29,8 @@ Beer object example:
 #### 5. Spring State Machine
 #### 6. Using Sagas with Spring
 #### 7. Integration Testing Sagas
+#### 8. Compensating Transactions
+#### 9. Spring Cloud Gateway
 
 - # Refactoring Model to Common Package
     - ### Goal - refactor package structure in all 3 microservices to share a common 'Brewery' package for all the Java objects that are shared between the microservices

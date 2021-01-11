@@ -21,7 +21,6 @@ import java.util.EnumSet;
 @EnableStateMachineFactory
 public class BeerOrderStateMachineConfig extends StateMachineConfigurerAdapter<BeerOrderStatusEnum, BeerOrderEventEnum> {
 
-    private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  validateOrderAction;
     // because we have @Component annotation in statemachine/actions/ValidateOrderAction,
     // Spring will create a bean with bean name allocateOrderAction with a lower case "a"
     // so this matches to statemachine/BeerOrderStateMachineConfig.allocateOrderAction
@@ -30,6 +29,7 @@ public class BeerOrderStateMachineConfig extends StateMachineConfigurerAdapter<B
     // if we declare it as below
     // this is a hidden Spring trick
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  allocateOrderAction;
+    private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  validateOrderAction;
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  validationFailureAction;
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  allocationFailureAction;
     private final Action<BeerOrderStatusEnum, BeerOrderEventEnum>  deallocateOrderAction;
@@ -46,6 +46,7 @@ public class BeerOrderStateMachineConfig extends StateMachineConfigurerAdapter<B
                 .end(BeerOrderStatusEnum.VALIDATION_EXCEPTION)
                 .end(BeerOrderStatusEnum.ALLOCATION_EXCEPTION);
     }
+
 
     @Override
     public void configure(StateMachineTransitionConfigurer<BeerOrderStatusEnum, BeerOrderEventEnum> transitions) throws Exception {

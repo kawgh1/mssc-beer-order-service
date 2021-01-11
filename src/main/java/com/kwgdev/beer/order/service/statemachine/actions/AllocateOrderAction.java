@@ -7,6 +7,7 @@ import com.kwgdev.beer.order.service.domain.BeerOrderStatusEnum;
 import com.kwgdev.beer.order.service.repositories.BeerOrderRepository;
 import com.kwgdev.beer.order.service.services.BeerOrderManagerImpl;
 import com.kwgdev.beer.order.service.web.mappers.BeerOrderMapper;
+import com.kwgdev.brewery.model.events.AllocateOrderRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.core.JmsTemplate;
@@ -14,6 +15,7 @@ import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.action.Action;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -37,15 +39,18 @@ public class AllocateOrderAction implements Action<BeerOrderStatusEnum, BeerOrde
     // On this action when we get a request from the State Machine we are going to go look up the beer order,
     // get that out of the repository and then do a JMS template convertAndSend and send that allocation request
     // off to the JMS queue.
+
     @Override
     public void execute(StateContext<BeerOrderStatusEnum, BeerOrderEventEnum> context) {
-
         String beerOrderId = (String) context.getMessage().getHeaders().get(BeerOrderManagerImpl.ORDER_ID_HEADER);
-        BeerOrder beerOrder = beerOrderRepository.findOneById(UUID.fromString(beerOrderId));
+        Optional<BeerOrder> beerOrderOptional = beerOrderRepository.findById(UUID.fromString(beerOrderId));
 
-        jmsTemplate.convertAndSend(JmsConfig.ALLOCATE_ORDER_QUEUE,
-                beerOrderMapper.beerOrderToDto(beerOrder));
-
-        log.debug("Sent Allocation Request for order id:  " + beerOrderId);
+        beerOrderOptional.ifPresentOrElse(beerOrder -> {
+            jmsTemplate.convertAndSend(JmsConfig.ALLOCATE_ORDER_QUEUE,
+                    AllocateOrderRequest.builder()
+                            .beerOrderDto(beerOrderMapper.beerOrderToDto(beerOrder))
+                            .build());
+            log.debug("Sent Allocation Request for order id: " + beerOrderId);
+        }, () -> log.error("Beer Order Not Found!"));
     }
 }
