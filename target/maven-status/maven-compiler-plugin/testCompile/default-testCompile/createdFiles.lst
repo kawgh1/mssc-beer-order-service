@@ -1,0 +1,3 @@
+com\kwgdev\beer\order\service\BeerOrderServiceApplicationTests.class
+com\kwgdev\beer\order\service\services\BeerOrderManagerImplIT$RestTemplateBuilderProvider.class
+com\kwgdev\beer\order\service\services\BeerOrderManagerImplIT.class
