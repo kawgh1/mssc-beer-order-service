@@ -19,6 +19,7 @@ C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\o
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\services\beer\BeerServiceImpl.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\BeerOrderStateMachineConfig.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\domain\BeerOrder.java
+C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\actions\AllocationFailureAction.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\BeerOrderStateChangeInterceptor.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\repositories\BeerOrderLineRepository.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\brewery\model\BeerOrderPagedList.java
@@ -29,6 +30,8 @@ C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\o
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\repositories\BeerOrderRepository.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\brewery\model\events\ValidateOrderResult.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\brewery\model\CustomerPagedList.java
+C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\actions\DeallocateOrderAction.java
+C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\actions\ValidationFailureAction.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\domain\BaseEntity.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\beer\order\service\statemachine\actions\ValidateOrderAction.java
 C:\Users\JJ\IdeaProjects\mssc-beer-order-service\src\main\java\com\kwgdev\brewery\model\events\ValidateOrderRequest.java

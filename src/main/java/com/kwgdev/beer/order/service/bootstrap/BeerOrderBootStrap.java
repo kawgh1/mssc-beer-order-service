@@ -31,7 +31,7 @@ public class BeerOrderBootStrap implements CommandLineRunner {
     private void loadCustomerData() {
         // if no "customer" exists at startup, create a new one to start consuming beer
         if (customerRepository.findAllByCustomerNameLike(BeerOrderBootStrap.TASTING_ROOM) .size() == 0) {
-            Customer savedCustomer = customerRepository.save(Customer.builder()
+            Customer savedCustomer = customerRepository.saveAndFlush(Customer.builder()
                     .customerName(TASTING_ROOM)
                     .apiKey(UUID.randomUUID())
                     .build());

@@ -16,6 +16,7 @@ com\kwgdev\beer\order\service\domain\BaseEntity.class
 com\kwgdev\brewery\model\OrderStatusUpdate.class
 com\kwgdev\beer\order\service\domain\BeerOrderLine.class
 com\kwgdev\brewery\model\events\AllocationFailureEvent.class
+com\kwgdev\beer\order\service\statemachine\actions\AllocationFailureAction.class
 com\kwgdev\beer\order\service\web\controllers\CustomerController.class
 com\kwgdev\beer\order\service\statemachine\BeerOrderStateChangeInterceptor.class
 com\kwgdev\brewery\model\BeerOrderDto.class
@@ -27,6 +28,7 @@ com\kwgdev\beer\order\service\web\mappers\DateMapper.class
 com\kwgdev\beer\order\service\web\mappers\CustomerMapperImpl.class
 com\kwgdev\brewery\model\BeerPagedList.class
 com\kwgdev\brewery\model\CustomerDto$CustomerDtoBuilder.class
+com\kwgdev\beer\order\service\statemachine\actions\DeallocateOrderAction.class
 com\kwgdev\brewery\model\BeerOrderPagedList.class
 com\kwgdev\beer\order\service\domain\BeerOrder.class
 com\kwgdev\beer\order\service\domain\BeerOrderLine$BeerOrderLineBuilder.class
@@ -43,6 +45,7 @@ com\kwgdev\brewery\model\events\DeallocateOrderRequest.class
 com\kwgdev\beer\order\service\services\BeerOrderServiceImpl.class
 com\kwgdev\beer\order\service\config\JmsConfig.class
 com\kwgdev\brewery\model\BeerOrderDto$BeerOrderDtoBuilder.class
+com\kwgdev\beer\order\service\statemachine\actions\ValidationFailureAction.class
 com\kwgdev\beer\order\service\services\listeners\ValidationResultListener.class
 com\kwgdev\beer\order\service\services\listeners\BeerOrderAllocationResultListener.class
 com\kwgdev\beer\order\service\services\BeerOrderManager.class

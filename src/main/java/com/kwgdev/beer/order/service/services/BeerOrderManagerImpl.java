@@ -46,7 +46,7 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
         beerOrder.setOrderStatus(BeerOrderStatusEnum.NEW);
 
         // once persisted to DB by Hibernate, Hibernate will set the ID value
-        BeerOrder savedBeerOrder = beerOrderRepository.save(beerOrder);
+        BeerOrder savedBeerOrder = beerOrderRepository.saveAndFlush(beerOrder);
         // then we tell the State Machine to validate the order
         sendBeerOrderEvent(savedBeerOrder, BeerOrderEventEnum.VALIDATE_ORDER);
 
@@ -66,8 +66,9 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
         Optional<BeerOrder> beerOrderOptional = beerOrderRepository.findById(beerOrderId);
 
         beerOrderOptional.ifPresentOrElse(beerOrder -> {
-                    if(isValid){
-                        sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED);
+            if(isValid){
+                sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED);
+
 
                         //wait for status change
                         awaitForStatus(beerOrderId, BeerOrderStatusEnum.VALIDATED);
@@ -152,11 +153,10 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
     }
 
 
-
     // State Machine
     // - here we don't need to rehydrate it, but because it is a brand new beer order
     // - we want to send the event
-    private void sendBeerOrderEvent(BeerOrder beerOrder, BeerOrderEventEnum eventEnum) {
+    private void sendBeerOrderEvent(BeerOrder beerOrder, BeerOrderEventEnum eventEnum){
 
         // build new State Machine method below with the Order Status from the Database
         StateMachine<BeerOrderStatusEnum, BeerOrderEventEnum> sm = build(beerOrder);
