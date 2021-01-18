@@ -8,6 +8,8 @@ spring.artemis.password=simetraehcapa
 
 [Docker ActiveMQ](#docker-activemq)
 
+Log into ActiveMQ server at http://localhost:8161/console/login
+
 **Beer Service** is responsible for generating the Beer objects used in the application and stores that Beer object data in a database. 
 **Beer Order Service** and **Beer Inventory** make calls to **Beer Service** to get information about the Beer objects.
 
@@ -39,6 +41,9 @@ Beer object example:
 #### 7. Integration Testing Sagas
 #### 8. Compensating Transactions
 #### 9. Spring Cloud Gateway
+#### 10. Service Registration
+#### 11. Service Discovery
+#### 12. Circuit Breaker
 
 - # Refactoring Model to Common Package
     - ### Goal - refactor package structure in all 3 microservices to share a common 'Brewery' package for all the Java objects that are shared between the microservices

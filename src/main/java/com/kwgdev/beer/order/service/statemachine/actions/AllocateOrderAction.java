@@ -10,7 +10,6 @@ import com.kwgdev.beer.order.service.web.mappers.BeerOrderMapper;
 import com.kwgdev.brewery.model.events.AllocateOrderRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.statemachine.StateContext;

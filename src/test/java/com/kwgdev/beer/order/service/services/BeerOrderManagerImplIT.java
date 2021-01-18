@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jenspiegsa.wiremockextension.WireMockExtension;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.client.WireMock;
 import com.kwgdev.beer.order.service.config.JmsConfig;
 import com.kwgdev.beer.order.service.domain.BeerOrder;
 import com.kwgdev.beer.order.service.domain.BeerOrderLine;

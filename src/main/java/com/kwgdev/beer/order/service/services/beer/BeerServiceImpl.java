@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * created by kw on 12/28/2020 @ 10:49 PM
  */
-@ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "com.kwgdev.brewery", ignoreUnknownFields = false)
 @Service
 public class BeerServiceImpl implements BeerService {
     public final static String BEER_PATH_V1 = "/api/v1/beer/";
