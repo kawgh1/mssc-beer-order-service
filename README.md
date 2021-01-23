@@ -10,6 +10,8 @@ spring.artemis.password=simetraehcapa
 
 Log into ActiveMQ server at http://localhost:8161/console/login
 
+
+
 **Beer Service** is responsible for generating the Beer objects used in the application and stores that Beer object data in a database. 
 **Beer Order Service** and **Beer Inventory** make calls to **Beer Service** to get information about the Beer objects.
 
@@ -25,6 +27,14 @@ Beer object example:
 - BigDecimal **price** = 12.95 
 - String **upc** = '0083783375213' 
 - Long **version** = 1
+
+# Default Port Mappings - For Single Host
+| Service Name | Port | 
+| --------| -----|
+| [Brewery Beer Service](https://github.com/kawgh1/mssc-beer-service) | 8080 |
+| [Brewery Beer Order Service](https://github.com/kawgh1/mssc-beer-order-service) | 8081 |
+| [Brewery Beer Inventory Service](https://github.com/kawgh1/mssc-beer-inventory-service) | 8082 |
+| [Inventory Failover Service](https://github.com/kawgh1/mssc-inventory-failover) | 8083 |
 
 
 [![CircleCI](https://circleci.com/gh/kawgh1/mssc-beer-order-service.svg?style=svg)](https://circleci.com/gh/kawgh1/mssc-beer-order-service)
@@ -44,6 +54,8 @@ Beer object example:
 #### 10. Service Registration
 #### 11. Service Discovery
 #### 12. Circuit Breaker
+#### 13. Spring Cloud Config
+#### 14. Distributed Tracing
 
 - # Refactoring Model to Common Package
     - ### Goal - refactor package structure in all 3 microservices to share a common 'Brewery' package for all the Java objects that are shared between the microservices
