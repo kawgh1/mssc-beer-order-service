@@ -1,5 +1,0 @@
-com\kwgdev\beer\order\service\BeerOrderServiceApplicationTests.class
-com\kwgdev\beer\order\service\services\testcomponents\BeerOrderValidationListener.class
-com\kwgdev\beer\order\service\services\BeerOrderManagerImplIT$RestTemplateBuilderProvider.class
-com\kwgdev\beer\order\service\services\BeerOrderManagerImplIT.class
-com\kwgdev\beer\order\service\services\testcomponents\BeerOrderAllocationListener.class

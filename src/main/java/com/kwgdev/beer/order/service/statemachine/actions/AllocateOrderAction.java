@@ -30,7 +30,6 @@ import java.util.UUID;
     // this is a hidden Spring trick
 @Slf4j
 @Component
-@Primary
 @RequiredArgsConstructor
 public class AllocateOrderAction implements Action<BeerOrderStatusEnum, BeerOrderEventEnum> {
 

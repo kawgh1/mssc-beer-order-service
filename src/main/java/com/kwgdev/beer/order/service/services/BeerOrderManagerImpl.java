@@ -56,7 +56,6 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
     @Transactional
     @Override
     public void processValidationResult(UUID beerOrderId, Boolean isValid) {
-
         log.debug("Process Validation Result for beerOrderId: " + beerOrderId + " Valid? " + isValid);
 
         // what's going to happen in terms of Hibernate, when we do sendBeerOrderEvent,
@@ -69,9 +68,8 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
             if(isValid){
                 sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED);
 
-
-                        //wait for status change
-                        awaitForStatus(beerOrderId, BeerOrderStatusEnum.VALIDATED);
+                //wait for status change
+                awaitForStatus(beerOrderId, BeerOrderStatusEnum.VALIDATED);
 
                         // get a fresh object
                         BeerOrder validatedOrder = beerOrderRepository.findById(beerOrderId).get();
@@ -153,6 +151,7 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
     }
 
 
+
     // State Machine
     // - here we don't need to rehydrate it, but because it is a brand new beer order
     // - we want to send the event
@@ -204,6 +203,7 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
             }
         }
     }
+
 
     private StateMachine<BeerOrderStatusEnum, BeerOrderEventEnum> build(BeerOrder beerOrder){
         StateMachine<BeerOrderStatusEnum, BeerOrderEventEnum> sm = stateMachineFactory.getStateMachine(beerOrder.getId());
