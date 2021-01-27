@@ -23,6 +23,18 @@
 
 
     <dependencies>
+        <!--        Spring Cloud Sleuth / Zipkin - Distributed Tracing localhost:9411-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <!--        sleuth / zipkin logging trace see resources/logback-spring.xml-->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.3</version>
+        </dependency>
+<!--        cloud-->
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
