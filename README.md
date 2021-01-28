@@ -56,6 +56,9 @@ Beer object example:
 #### 12. Circuit Breaker
 #### 13. Spring Cloud Config
 #### 14. Distributed Tracing
+#### 15. Securing Spring Cloud
+#### 16. Building Docker Images
+#### 17. Docker Compose
 
 - # Refactoring Model to Common Package
     - ### Goal - refactor package structure in all 3 microservices to share a common 'Brewery' package for all the Java objects that are shared between the microservices
