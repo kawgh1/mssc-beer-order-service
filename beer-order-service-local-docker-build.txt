@@ -1,0 +1,73 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------< com.kwgdev:mssc-beer-order-service >-----------------
+[INFO] Building mssc-beer-order-service 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- docker-maven-plugin:0.33.0:build (default-cli) @ mssc-beer-order-service ---
+[WARNING] Invalid POM for com.github.jknack:handlebars:jar:4.0.7, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] Invalid POM for com.github.jknack:handlebars-helpers:jar:4.0.7, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] Copying files to C:\Users\----\IdeaProjects\mssc-beer-order-service\target\docker\<docker-username>\mssc-beer-order-service\build\maven
+[INFO] Building tar: C:\Users\----\IdeaProjects\mssc-beer-order-service\target\docker\<docker-username>\mssc-beer-order-service\tmp\docker-build.tar
+[INFO] DOCKER> [<docker-username>/mssc-beer-order-service:latest] "mssc-beer-order-service": Created docker-build.tar in 5 seconds
+[INFO] DOCKER> Step 1/13 : FROM openjdk:11-jre-slim as builder
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 2/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 3e6956397948
+[INFO] DOCKER> Step 3/13 : ADD maven/mssc-beer-order-service-0.0.1-SNAPSHOT.jar mssc-beer-order-service-0.0.1-SNAPSHOT.jar
+[INFO] DOCKER>
+[INFO] DOCKER> ---> bdad11678ff6
+[INFO] DOCKER> Step 4/13 : RUN java -Djarmode=layertools -jar mssc-beer-order-service-0.0.1-SNAPSHOT.jar extract
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 2551a6a6687e
+[INFO] DOCKER> Removing intermediate container 2551a6a6687e
+[INFO] DOCKER> ---> 05b866c1fb29
+[INFO] DOCKER> Step 5/13 : FROM openjdk:11-jre-slim
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 6/13 : LABEL PROJECT_NAME=mssc-beer-order-service       PROJECT=com.kwgdev:mssc-beer-order-service:jar:0.0.1-SNAPSHOT
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 8a9abecab186
+[INFO] DOCKER> Removing intermediate container 8a9abecab186
+[INFO] DOCKER> ---> 030303ebe34d
+[INFO] DOCKER> Step 7/13 : EXPOSE 8080
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in b3ee511080f0
+[INFO] DOCKER> Removing intermediate container b3ee511080f0
+[INFO] DOCKER> ---> 3d3f15ed618a
+[INFO] DOCKER> Step 8/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in a54ba5adb47f
+[INFO] DOCKER> Removing intermediate container a54ba5adb47f
+[INFO] DOCKER> ---> 2fd1ce8b117a
+[INFO] DOCKER> Step 9/13 : COPY --from=builder application/dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 32cef586fbec
+[INFO] DOCKER> Step 10/13 : COPY --from=builder application/spring-boot-loader/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> fd7796d5c700
+[INFO] DOCKER> Step 11/13 : COPY --from=builder application/snapshot-dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> f012eab68b5b
+[INFO] DOCKER> Step 12/13 : COPY --from=builder application/application/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 640c01750ea7
+[INFO] DOCKER> Step 13/13 : ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "org.springframework.boot.loader.JarLauncher"]
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in e00a3b847e67
+[INFO] DOCKER> Removing intermediate container e00a3b847e67
+[INFO] DOCKER> ---> 0179420784e8
+[INFO] DOCKER> Successfully built 0179420784e8
+[INFO] DOCKER> Successfully tagged <docker-username>/mssc-beer-order-service:latest
+[INFO] DOCKER> [<docker-username>/mssc-beer-order-service:latest] "mssc-beer-order-service": Built image sha256:01794
+[INFO] DOCKER> [<docker-username>/mssc-beer-order-service:latest] "mssc-beer-order-service": Tag with latest,0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.326 s
+[INFO] Finished at: 2021-01-28T22:13:34-06:00
+[INFO] ------------------------------------------------------------------------
+
