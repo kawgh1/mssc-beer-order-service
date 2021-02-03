@@ -42,23 +42,26 @@ Beer object example:
 # MSSC Beer Order Service
 
 ## Steps for Deconstruction into  Microservices
-#### 1. Dependency Management
-#### 2. (Local) MySQL Configuration
-#### 3. JMS Messaging
-#### 4. JMS with Microservices
-#### 5. Spring State Machine
-#### 6. Using Sagas with Spring
-#### 7. Integration Testing Sagas
-#### 8. Compensating Transactions
-#### 9. Spring Cloud Gateway
-#### 10. Service Registration
-#### 11. Service Discovery
-#### 12. Circuit Breaker
-#### 13. Spring Cloud Config
-#### 14. Distributed Tracing
-#### 15. Securing Spring Cloud
-#### 16. Building Docker Images
-#### 17. Docker Compose
+**1. Dependency Management**  
+**2. (Local) MySQL Configuration**  
+**3. JMS Messaging**  
+**4. JMS with Microservices**  
+**5. Spring State Machine**  
+**6. Using Sagas with Spring**  
+**7. Integration Testing Sagas**  
+**8. Compensating Transactions**  
+**9. Spring Cloud Gateway**  
+**10. Service Registration**  
+**11. Service Discovery**  
+**12. Circuit Breaker**  
+**13. Spring Cloud Config**  
+**14. Distributed Tracing**  
+**15. Securing Spring Cloud**  
+**16. Building Docker Images**  
+**17. Docker Compose**  
+**18. Consolidated Logging**  
+**19. Docker Swarm**  
+  
 
 - # Refactoring Model to Common Package
     - ### Goal - refactor package structure in all 3 microservices to share a common 'Brewery' package for all the Java objects that are shared between the microservices
